@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>trigger高度过渡</title>
+    <style type="text/css">
+        *,
+        ::after,
+        ::before{
+            box-sizing: inherit;
+        }
+       .triggerContainer{
+            border-radius: 0.25rem;
+            padding: 0.75rem 1.25rem;
+            background: #f5f6f9;
+       }
+       .trigger{
+           max-height: 0;
+           overflow: hidden;
+           transition: max-height 1s cubic-bezier(.23,1,.32,1);;
+       }
+       .triggerContainer:hover > .trigger{
+           max-height: var(--max-height);
+       }
+    </style>
+    <script type="text/javascript">
+        var trigger = document.querySelector('.trigger');
+        var height = trigger.scrollHeight;
+        trigger.style.setProperty('--max-height',height+'px');
+    </script>
+</head>
+<body>
+    <div class="triggerContainer">
+        Hover me to see a height transition.
+        <div class="trigger" style="--max-height:156px;">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia nihil minima consectetur quod fugit, rem modi quas tenetur vitae fugiat odit vero at voluptatum ipsam consequatur provident reprehenderit non molestias.
+        </div>
+    </div>
+</body>
+</html>

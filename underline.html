@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>hover underline 悬停下划线动画</title>
+    <style>
+        .underlineContainer{
+            border-radius: 0.25rem;
+            padding: 0.75rem 1.25rem;
+            background: #f5f6f9;
+        }
+        .underlineContainer .underline{
+            display: inline-block;
+            position: relative;
+            color: #0087ca;
+        }
+        .underline::after{
+            content: '';
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 100%;
+            transform: scaleX(0);
+            position: absolute;
+            transform-origin: bottom right;
+            background-color: #0087ca;
+            transition: transform 0.25s ease-out;
+        }
+        .underline:hover::after{
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    </style>
+</head>
+<body>
+    <div class="underlineContainer">
+        <p class="underline">但使龙城飞将在，不教胡马度阴山。</p>
+    </div>
+</body>
+</html>
