@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>sibling-fade 同级渐变</title>
+    <style>
+        .siblingContainer{
+            border-radius: 0.25rem;
+            padding: 0.75rem 1.25rem;
+            background: #f5f6f9;
+        }
+        .siblingContainer .sibling-fade{
+            cursor: pointer;
+            line-height: 2;
+            vertical-align: middle;
+        }
+        .sibling-fade span{
+            padding: 0 1rem;
+            transition: opacity 0.2s;
+        }
+        .sibling-fade:hover span:not(:hover){
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <nav class="siblingContainer">
+        <nav class="sibling-fade">
+            <span>项目 1</span>
+            <span>项目 2</span>
+            <span>项目 3</span>
+            <span>项目 4</span>
+            <span>项目 5</span>
+            <span>项目 6</span>
+        </nav>
+    </div>
+</body>
+</html>
